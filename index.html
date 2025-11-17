@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100%;
+        }
+
+        .resume-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .profile-info h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-info .job-title {
+            font-size: 1.25rem;
+            color: #cbd5e0;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .profile-info .tagline {
+            font-size: 1rem;
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .experience-item, .education-item {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .experience-item:hover::before, .education-item:hover::before {
+            opacity: 1;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-company, .item-school {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-date {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .item-description {
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .profile-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="floating-elements">
+   <div class="floating-circle"></div>
+   <div class="floating-circle"></div>
+   <div class="floating-circle"></div>
+  </div>
+  <main class="container">
+   <div class="resume-card">
+    <header class="header-section">
+     <div class="profile-content">
+      <div class="profile-avatar" id="avatar">
+       JD
+      </div>
+      <div class="profile-info">
+       <h1 id="fullName">John Doe</h1>
+       <div class="job-title" id="jobTitle">
+        Senior Software Engineer
+       </div>
+       <div class="tagline" id="tagline">
+        Passionate about creating innovative digital solutions
+       </div>
+       <div class="contact-info">
+        <div class="contact-item">
+         <svg class="contact-icon" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+         </svg><span id="email">john.doe@email.com</span>
+        </div>
+        <div class="contact-item">
+         <svg class="contact-icon" viewbox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+         </svg><span id="phone">+1 (555) 123-4567</span>
+        </div>
+        <div class="contact-item">
+         <svg class="contact-icon" viewbox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+         </svg><span id="location">San Francisco, CA</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="main-content">
+     <section class="section">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text" id="aboutText">Experienced software engineer with 8+ years of expertise in full-stack development, cloud architecture, and team leadership. Passionate about building scalable solutions and mentoring junior developers.</p>
+     </section>
+     <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+       <div class="skill-item">
+        JavaScript
+       </div>
+       <div class="skill-item">
+        React
+       </div>
+       <div class="skill-item">
+        Node.js
+       </div>
+       <div class="skill-item">
+        Python
+       </div>
+       <div class="skill-item">
+        AWS
+       </div>
+       <div class="skill-item">
+        Docker
+       </div>
+       <div class="skill-item">
+        MongoDB
+       </div>
+       <div class="skill-item">
+        GraphQL
+       </div>
+      </div>
+     </section>
+     <section class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-item">
+       <div class="item-title">
+        Senior Software Engineer
+       </div>
+       <div class="item-company">
+        TechCorp Inc.
+       </div>
+       <div class="item-date">
+        2020 - Present
+       </div>
+       <div class="item-description">
+        Lead development of microservices architecture serving 1M+ users. Mentored 5 junior developers and improved deployment efficiency by 40%.
+       </div>
+      </div>
+      <div class="experience-item">
+       <div class="item-title">
+        Full Stack Developer
+       </div>
+       <div class="item-company">
+        StartupXYZ
+       </div>
+       <div class="item-date">
+        2018 - 2020
+       </div>
+       <div class="item-description">
+        Built responsive web applications using React and Node.js. Implemented CI/CD pipelines and reduced bug reports by 60%.
+       </div>
+      </div>
+     </section>
+     <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="education-item">
+       <div class="item-title">
+        Bachelor of Computer Science
+       </div>
+       <div class="item-school">
+        University of Technology
+       </div>
+       <div class="item-date">
+        2014 - 2018
+       </div>
+       <div class="item-description">
+        Graduated Magna Cum Laude. Specialized in software engineering and data structures.
+       </div>
+      </div>
+     </section>
+    </div>
+   </div>
+  </main>
+  <script>
+        const defaultConfig = {
+            full_name: "John Doe",
+            job_title: "Senior Software Engineer", 
+            tagline: "Passionate about creating innovative digital solutions",
+            email: "john.doe@email.com",
+            phone: "+1 (555) 123-4567",
+            location: "San Francisco, CA",
+            about_text: "Experienced software engineer with 8+ years of expertise in full-stack development, cloud architecture, and team leadership. Passionate about building scalable solutions and mentoring junior developers.",
+            background_color: "#667eea",
+            surface_color: "#2d3748",
+            text_color: "#4a5568",
+            primary_action_color: "#667eea",
+            secondary_action_color: "#f093fb",
+            font_family: "Inter",
+            font_size: 16
+        };
+
+        let config = { ...defaultConfig };
+
+        function updateAvatar(name) {
+            const avatar = document.getElementById('avatar');
+            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+            avatar.textContent = initials;
+        }
+
+        async function onConfigChange(newConfig) {
+            config = { ...config, ...newConfig };
+            
+            // Update text content
+            document.getElementById('fullName').textContent = config.full_name || defaultConfig.full_name;
+            document.getElementById('jobTitle').textContent = config.job_title || defaultConfig.job_title;
+            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+            document.getElementById('email').textContent = config.email || defaultConfig.email;
+            document.getElementById('phone').textContent = config.phone || defaultConfig.phone;
+            document.getElementById('location').textContent = config.location || defaultConfig.location;
+            document.getElementById('aboutText').textContent = config.about_text || defaultConfig.about_text;
+            
+            // Update avatar
+            updateAvatar(config.full_name || defaultConfig.full_name);
+            
+            // Update colors
+            const backgroundGradient = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.primary_action_color || defaultConfig.primary_action_color} 100%)`;
+            document.body.style.background = backgroundGradient;
+            
+            const headerSection = document.querySelector('.header-section');
+            const headerGradient = `linear-gradient(135deg, ${config.surface_color || defaultConfig.surface_color} 0%, ${config.text_color || defaultConfig.text_color} 100%)`;
+            headerSection.style.background = headerGradient;
+            
+            const avatar = document.getElementById('avatar');
+            const avatarGradient = `linear-gradient(135deg, ${config.secondary_action_color || defaultConfig.secondary_action_color} 0%, ${config.primary_action_color || defaultConfig.primary_action_color} 100%)`;
+            avatar.style.background = avatarGradient;
+            
+            // Update font
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = '-apple-system, BlinkMacSystemFont, sans-serif';
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+            
+            // Update font sizes
+            const baseSize = config.font_size || defaultConfig.font_size;
+            document.getElementById('fullName').style.fontSize = `${baseSize * 2.5 / 16}rem`;
+            document.querySelector('.job-title').style.fontSize = `${baseSize * 1.25 / 16}rem`;
+            document.querySelector('.tagline').style.fontSize = `${baseSize * 1 / 16}rem`;
+            document.querySelector('.about-text').style.fontSize = `${baseSize * 1 / 16}rem`;
+            
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                title.style.fontSize = `${baseSize * 1.5 / 16}rem`;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => {
+                            config.surface_color = value;
+                            window.elementSdk.setConfig({ surface_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                        set: (value) => {
+                            config.primary_action_color = value;
+                            window.elementSdk.setConfig({ primary_action_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                        set: (value) => {
+                            config.secondary_action_color = value;
+                            window.elementSdk.setConfig({ secondary_action_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["full_name", config.full_name || defaultConfig.full_name],
+                ["job_title", config.job_title || defaultConfig.job_title],
+                ["tagline", config.tagline || defaultConfig.tagline],
+                ["email", config.email || defaultConfig.email],
+                ["phone", config.phone || defaultConfig.phone],
+                ["location", config.location || defaultConfig.location],
+                ["about_text", config.about_text || defaultConfig.about_text]
+            ]);
+        }
+
+        // Initialize the SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Initialize with default values
+        onConfigChange(defaultConfig);
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99fd65c0e2d87629',t:'MTc2MzM2MzMxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
