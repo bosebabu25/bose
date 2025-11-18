@@ -342,7 +342,7 @@
 
         .certificate-image-container {
             width: 100%;
-            height: 400px;
+            height: 220px;
             border-radius: 12px;
             overflow: hidden;
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
@@ -351,34 +351,17 @@
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border: 1px solid #e2e8f0;
-            position: relative;
         }
 
-        .certificate-pdf {
+        .certificate-image {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        .pdf-view-button {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .pdf-view-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+        .certificate-card:hover .certificate-image {
+            transform: scale(1.05);
         }
 
         .certificate-placeholder {
@@ -652,7 +635,7 @@
         <div class="certificate-image-container" id="eduCertImageContainer1">
          <div class="certificate-placeholder">
           <svg width="60" height="60" viewbox="0 0 24 24" fill="none"><path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z" fill="#48bb78" />
-          </svg><span style="font-size: 0.85rem;">Certificate PDF</span>
+          </svg><span style="font-size: 0.85rem;">Certificate Image</span>
          </div>
         </div>
         <div class="certificate-info">
@@ -677,7 +660,7 @@
         <div class="certificate-image-container" id="eduCertImageContainer2">
          <div class="certificate-placeholder">
           <svg width="60" height="60" viewbox="0 0 24 24" fill="none"><path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z" fill="#48bb78" />
-          </svg><span style="font-size: 0.85rem;">Certificate PDF</span>
+          </svg><span style="font-size: 0.85rem;">Certificate Image</span>
          </div>
         </div>
         <div class="certificate-info">
@@ -707,7 +690,7 @@
         <div class="certificate-image-container" id="profCertImageContainer1">
          <div class="certificate-placeholder">
           <svg width="60" height="60" viewbox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#667eea" />
-          </svg><span style="font-size: 0.85rem;">Certificate PDF</span>
+          </svg><span style="font-size: 0.85rem;">Certificate Image</span>
          </div>
         </div>
         <div class="certificate-info">
@@ -732,7 +715,7 @@
         <div class="certificate-image-container" id="profCertImageContainer2">
          <div class="certificate-placeholder">
           <svg width="60" height="60" viewbox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#667eea" />
-          </svg><span style="font-size: 0.85rem;">Certificate PDF</span>
+          </svg><span style="font-size: 0.85rem;">Certificate Image</span>
          </div>
         </div>
         <div class="certificate-info">
@@ -757,7 +740,7 @@
         <div class="certificate-image-container" id="profCertImageContainer3">
          <div class="certificate-placeholder">
           <svg width="60" height="60" viewbox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#667eea" />
-          </svg><span style="font-size: 0.85rem;">Certificate PDF</span>
+          </svg><span style="font-size: 0.85rem;">Certificate Image</span>
          </div>
         </div>
         <div class="certificate-info">
@@ -782,7 +765,7 @@
         <div class="certificate-image-container" id="profCertImageContainer4">
          <div class="certificate-placeholder">
           <svg width="60" height="60" viewbox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#667eea" />
-          </svg><span style="font-size: 0.85rem;">Certificate PDF</span>
+          </svg><span style="font-size: 0.85rem;">Certificate Image</span>
          </div>
         </div>
         <div class="certificate-info">
@@ -858,40 +841,21 @@
             avatar.textContent = initials;
         }
 
-        function updateCertificateImage(containerElement, pdfUrl, placeholderType) {
+        function updateCertificateImage(containerElement, imageUrl, placeholderType) {
             containerElement.innerHTML = '';
             
-            if (pdfUrl && pdfUrl.trim() !== '') {
-                // Convert Google Drive sharing link to embeddable format
-                let embedUrl = pdfUrl;
-                if (pdfUrl.includes('drive.google.com/file/d/')) {
-                    const fileIdMatch = pdfUrl.match(/\/d\/([^/]+)/);
-                    if (fileIdMatch) {
-                        embedUrl = `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
-                    }
-                }
-                
-                const iframe = document.createElement('iframe');
-                iframe.src = embedUrl;
-                iframe.className = 'certificate-pdf';
-                iframe.allow = 'autoplay';
-                iframe.onload = function() {
-                    // PDF loaded successfully
-                };
-                iframe.onerror = function() {
+            if (imageUrl && imageUrl.trim() !== '') {
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = 'Certificate';
+                img.className = 'certificate-image';
+                img.onerror = function() {
+                    this.src = '';
+                    this.alt = 'Image failed to load';
+                    this.style.display = 'none';
                     showPlaceholder(containerElement, placeholderType);
                 };
-                
-                containerElement.appendChild(iframe);
-                
-                // Add "View Full PDF" button
-                const viewButton = document.createElement('a');
-                viewButton.href = pdfUrl;
-                viewButton.target = '_blank';
-                viewButton.rel = 'noopener noreferrer';
-                viewButton.className = 'pdf-view-button';
-                viewButton.textContent = '📄 View Full PDF';
-                containerElement.appendChild(viewButton);
+                containerElement.appendChild(img);
             } else {
                 showPlaceholder(containerElement, placeholderType);
             }
@@ -910,7 +874,7 @@
                 <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
                     <path d="${iconPath}" fill="${iconColor}"/>
                 </svg>
-                <span style="font-size: 0.85rem;">Certificate PDF</span>
+                <span style="font-size: 0.85rem;">Certificate Image</span>
             `;
             
             containerElement.appendChild(placeholder);
@@ -1126,5 +1090,5 @@
         // Initialize with default values
         onConfigChange(defaultConfig);
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a0506a1a2497a25',t:'MTc2MzQ0MzMwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a04fcc56059e8ad',t:'MTc2MzQ0Mjg5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
