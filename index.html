@@ -1,44 +1,932 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-IN" class="theme light classic"><head><base href="/"><meta charset="utf-8">
-<title>CV_WebSite</title><meta name="app-name" content="export_website"/><meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="_assets/a0684b0780c739e9.vendor.ltr.css" rel="stylesheet" integrity="sha512-JwMCpiHdk95MoUTatfaZJwstzeDnWfvWMJiwnSxZfPmgeCe4yvQDQ+ONMQjIy/Ht72r0TmlE+gvZnYRnpdLdVg==" crossorigin="anonymous"><link href="_assets/0db69ba65ac58af0.ltr.css" rel="stylesheet" integrity="sha512-+nLvZGXhwOQ0/PkDaxhG59ZbfHQPadkPMyS21MqMi5h811UXHaZK1vTvm/YwZATKfc5BihiPBWEC+O3juk7A5g==" crossorigin="anonymous"><link href="_assets/static_font_4.ltr.css" rel="stylesheet"><link href="_assets/56d90dafa69890a5.runtime.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-T+uz4/MUbE6CYhTB1GmUrRhK8xBiZwp5IZlWRUdR3LRiZHIgzcQJXlsJUohTDZysaSWnWYwFlRZ9BhmljV72sg==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">
-<link href="_assets/1194272a367de1cd.s4le6a.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-e65jAyE+7hEzLCnQHY4OERCZtP9JyKI2BwLdZSuaxmOJs7H0ZiQSRldMto5yV/XujnMRZnWjZeEGyzEf3aJGWg==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">
-<link href="_assets/a9ff626aa7def714.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-nVPtIY6KdwKUqUaeHxE6Rprqwr2WVcpWXFV16MrmCPY7ddNp9iG51y+Tjh5Nc2I5tIvKvmzvMk1CSaITIqD7uA==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"><link href="_assets/38b20d11dbf05ad2.strings.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-H12N9M1B/v1W+svN74uHoeFPVNxhO+zcdSg9/8eH8EuNjLXT9P0MptCM6omxvHh6qS64tVpmR+y/NTHMDZBU8g==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"><link href="_assets/9a065197c269c425.en-IN.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-piGYMu0nY/2oaE/UvQwScbO+AFJwjRFSqKGWd/HbXShPDmnqtL1u2trUpJ5unxhsIYE3dGy8yJ/XKD9+Swu7gg==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"><link href="_assets/988eee6455ee29b7.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-xcCl+Bbqhbj6GMCAh7yg3qEqPMCGOedLItKEaRC46D86b5f2JHIQ3c8fKi1KG319TXXmnUhwQMwnmrhBwgIQyA==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"><meta name="referrer" content="strict-origin-when-cross-origin"><meta property="og:title" content="Copy of CV_WebSite"><meta property="og:type" content="website"><link rel="shortcut icon" href="_assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png"><link rel="icon" href="_assets/images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192"><link rel="apple-touch-icon" href="_assets/images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180"><script nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">window['__canva_website_bootstrap__'] = JSON.parse('{"A":"DAG5DIMuQQ0","B":"eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwia2lkIjoia2lkLTE3NDAwODM2MjAyNzEifQ..xEO3tgFBGQnZRa0O.rgYV-x51IfkA6EkEyNPh-AwHukpaEH_nfjrIOxgH0Lw_KQPy6lFYMgligkvwrgRiRXUBd3WbZA.AX4Mokcm-73gXQmk5pOIkg"}');</script><script nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">
-      document.addEventListener('contextmenu', (e) => {
-        const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
-          tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0,
-        );
-        isMedia && e.preventDefault();
-      });
-    </script><script nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">
-  const lang = navigator.language ? navigator.language : 'en';
-  window.canva_installFooter = (container) => {
-    if (!(container instanceof HTMLDivElement)) {
-      return;
-    }
-    fetch('_footer?lang=' + encodeURIComponent(lang)).then(response => {
-      if (response.status !== 200) {
-        return;
-      }
-      response.text().then(footerStr => {
-        container.innerHTML = '';
-        const div = document.createElement('div');
-        div.innerHTML = footerStr;
-        for (const child of [...div.children]) {
-          if (child.tagName.toLowerCase() !== 'script') {
-            container.append(child);
-          }
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Resume</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100%;
+            overflow-x: hidden;
         }
 
-        (() => { !function(){"use strict";const c="active",t="modal_backdrop",o="modal",e="form_close_initial",n="form_report",s="privacy_policy_modal",l="form_close_privacy_policy",i="report_button",d="privacy_policy_button",a=document.getElementById(t),m=document.getElementById(o),r=document.getElementById(e),u=document.getElementById(n),y=document.getElementById(s),p=document.getElementById(l),L=document.getElementById(i),_=document.getElementById(d);function f(){a.classList.remove(c),m.classList.remove(c),L.classList.remove(c),L.focus(),a.onclick=null}function k(){a.classList.remove(c),y.classList.remove(c),_.classList.remove(c),_.focus(),a.onclick=null}u.onclick=function(){const{origin:c,pathname:t}=window.location,o=c+t,e=u.dataset.reportUrl+encodeURIComponent(o);window.open(e)},r.onclick=f,L.onclick=function(){a.classList.add(c),a.onclick=f,m.classList.add(c),L.classList.add(c)},p.onclick=k,_.onclick=function(){a.classList.add(c),a.onclick=k,y.classList.add(c),_.classList.add(c)}}(); })();
-      });
-    });
-  }
-</script><script nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">
-    window.C_CAPTCHA_IMPLEMENTATION = 'RECAPTCHA';
-</script><script nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">
-    window.C_CAPTCHA_KEY = '6LdpNmIrAAAAAHQVezN3pBAfDjQQ2qUpo881f24o';
-</script></head>
-<body>
-  <script nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">document.documentElement.classList.replace('adaptive', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script><div id="root"></div><script nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444">(function() {window['__canva_public_path__'] = '_assets\/'; window['bootstrap'] = JSON.parse('{"base":{"A?":"B","L":false,"N":false,"E":"727c3be428f0a90ff7333e65dba368efc6980e00","K":1763468941,"F":{"A?":"B"},"G":"CLIENT_FULL","I":"A","O":{"A?":"B"},"M":"/_online","U":[],"V":[],"a":{"K":"export_website","H":{}},"d":{"A":"wss://www.canva.com/_stream","B":{"F":"export_website"},"C":8388608},"b":{"A?":"H","C":{"a":"WEB"},"D":{"a":"WEB","c":"en-IN"},"E":{},"P":[],"Q":[],"R":false,"S":false}},"page":{"A":{"B":{"A?":"A","A":"TAGcbLa0hys","B":1},"C":{"A":1366.0,"B":768.0,"C":"D"},"Q":[],"R":[],"P":"en-IN","D":"Copy of CV_WebSite","E":"","F":[],"G":{},"Y":{},"a":[],"b":[],"V":[],"W":[],"A":[{"A?":"j","Z":{"A?":"A","A":"TAGcbLa0hys","B":1},"a":"PBfDJxYDlCNthZBM","R":false,"S":false,"U":false,"Q":{},"v":"B","t":[{"A?":"i","a":"PB8Wr0k5fjVb1tgp","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":3522.0,"C":"D"},"D":{"C":"#ffffff","D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"O","A":-9.094947017729282E-13,"B":-2.2737367544323206E-13,"D":1366.0000000000002,"C":3522.000000000001,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=D&locale=en-IN","b":1366.0000000000002,"c":3522.000000000001}],"I":[]}],"u":[],"L":{}}],"I":[]},"Z":{"A?":"E","M":"en-IN","e":false,"f":{"B":"#ffffff","C":"#304254"},"g":[{"A?":"A","K":"PBfDJxYDlCNthZBM","L":"","e":{"A":true}}]},"I":{"A":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"REGULAR","files":[{"url":"_assets/fonts/f8f199f09526f79e87644ed227e0f651.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194188},{"url":"_assets/fonts/daee28464eba92254cb149feea6599e3.otf","format":"OTF","unicodeRanges":[],"sizeBytes":436180},{"url":"_assets/fonts/4ff8a742aa834e35f10ead140b735c45.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234380}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}},{"style":"BOLD","files":[{"url":"_assets/fonts/9fd726aeae98b22824f0dc8947036e77.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234696},{"url":"_assets/fonts/98c4d2c0223fc8474641c77f923528e9.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194064},{"url":"_assets/fonts/0bb563f2f60ffd4e62b64cb021c33776.otf","format":"OTF","unicodeRanges":[],"sizeBytes":438516}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}},{"style":"BOLD_ITALICS","files":[{"url":"_assets/fonts/7fc2786f9023d4d812357cb787e9ad4b.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237660},{"url":"_assets/fonts/4de29305db46625343735e840e3d27aa.otf","format":"OTF","unicodeRanges":[],"sizeBytes":435028},{"url":"_assets/fonts/1060345c54d396e76d73f1da7ee200bd.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":203232}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"ITALICS","files":[{"url":"_assets/fonts/79d14bb61301a10c73c6cb293c29b309.otf","format":"OTF","unicodeRanges":[],"sizeBytes":440740},{"url":"_assets/fonts/ac9b8a560f98d1757a4565a2419d33c3.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240632},{"url":"_assets/fonts/d257a7100844bc3f98c9021168b6249e.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":201132}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}}],"E":false}],"B":[],"C":[],"D":[],"E":[{"A":"https://www.canva-hosted-embed.com/codelet/bth01zrn5tmw5w78","Q":false,"B":"Canva","D":1763468941438,"E":"\x3ciframe src=\\"https://bth01zrn5tmw5w78.canva-hosted-embed.com/codelet/AAEAEGJ0aDAxenJuNXRtdzV3NzgAAAAAAZqcFvR9aZGKgHfEdryBt_dRsVp_U1APQ75pF4WkHRmAigjDQEs/\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms\\" allowfullscreen=\\"true\\" width=\\"800\\" height=\\"450\\" style=\\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\\" allow=\\"fullscreen\\">\x3c/iframe>","F":1366,"G":3522},{"A":"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=D&locale=en-IN","Q":false,"B":"Canva","D":1763468941550,"E":"\x3ciframe src=\\"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=D&locale=en-IN\\" width=\\"1367\\" height=\\"3523\\" frameborder=\\"0\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox\\" style=\\"width:100%;height:100%;border:0\\">\x3c/iframe>","F":1367,"G":3523}],"F":[],"G":[]},"B":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"REGULAR","files":[{"url":"_assets/fonts/f8f199f09526f79e87644ed227e0f651.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194188},{"url":"_assets/fonts/daee28464eba92254cb149feea6599e3.otf","format":"OTF","unicodeRanges":[],"sizeBytes":436180},{"url":"_assets/fonts/4ff8a742aa834e35f10ead140b735c45.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234380}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}},{"style":"BOLD","files":[{"url":"_assets/fonts/9fd726aeae98b22824f0dc8947036e77.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234696},{"url":"_assets/fonts/98c4d2c0223fc8474641c77f923528e9.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194064},{"url":"_assets/fonts/0bb563f2f60ffd4e62b64cb021c33776.otf","format":"OTF","unicodeRanges":[],"sizeBytes":438516}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}},{"style":"BOLD_ITALICS","files":[{"url":"_assets/fonts/7fc2786f9023d4d812357cb787e9ad4b.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237660},{"url":"_assets/fonts/4de29305db46625343735e840e3d27aa.otf","format":"OTF","unicodeRanges":[],"sizeBytes":435028},{"url":"_assets/fonts/1060345c54d396e76d73f1da7ee200bd.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":203232}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"ITALICS","files":[{"url":"_assets/fonts/79d14bb61301a10c73c6cb293c29b309.otf","format":"OTF","unicodeRanges":[],"sizeBytes":440740},{"url":"_assets/fonts/ac9b8a560f98d1757a4565a2419d33c3.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240632},{"url":"_assets/fonts/d257a7100844bc3f98c9021168b6249e.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":201132}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}}],"E":false}],"E":[],"F":[],"G":[],"H":[{"A":"https://www.canva-hosted-embed.com/codelet/bth01zrn5tmw5w78","Q":false,"B":"Canva","D":1763468941438,"E":"\x3ciframe src=\\"https://bth01zrn5tmw5w78.canva-hosted-embed.com/codelet/AAEAEGJ0aDAxenJuNXRtdzV3NzgAAAAAAZqcFvR9aZGKgHfEdryBt_dRsVp_U1APQ75pF4WkHRmAigjDQEs/\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms\\" allowfullscreen=\\"true\\" width=\\"800\\" height=\\"450\\" style=\\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\\" allow=\\"fullscreen\\">\x3c/iframe>","F":1366,"G":3522},{"A":"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=D&locale=en-IN","Q":false,"B":"Canva","D":1763468941550,"E":"\x3ciframe src=\\"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=D&locale=en-IN\\" width=\\"1367\\" height=\\"3523\\" frameborder=\\"0\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox\\" style=\\"width:100%;height:100%;border:0\\">\x3c/iframe>","F":1367,"G":3523}],"S":[],"K":{"B":"#ffffff","C":"#304254"},"Q":{"A":false,"B":true,"M":true},"R":false,"T":true,"W":false,"U":true,"V":true},"ui":{"N":false,"A":true,"B":"A","C":false,"D":false,"K":"A","I":false,"J":false,"P":false}}'); window['flags'] = JSON.parse('{"31382143":true,"61af18e7":true,"b449fd3a":true,"4073adf":true,"3b7f2549":true,"33987a20":true,"bfe14ca1":true,"978ce15d":150000.0}'); window['cmsg'] = window['cmsg'] || { locale: "en-IN", strings: {} };})();</script><script crossorigin="anonymous" src="_assets/56d90dafa69890a5.runtime.js" defer integrity="sha512-T+uz4/MUbE6CYhTB1GmUrRhK8xBiZwp5IZlWRUdR3LRiZHIgzcQJXlsJUohTDZysaSWnWYwFlRZ9BhmljV72sg==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"></script><script crossorigin="anonymous" src="_assets/1194272a367de1cd.s4le6a.vendor.js" defer integrity="sha512-e65jAyE+7hEzLCnQHY4OERCZtP9JyKI2BwLdZSuaxmOJs7H0ZiQSRldMto5yV/XujnMRZnWjZeEGyzEf3aJGWg==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"></script><script crossorigin="anonymous" src="_assets/a9ff626aa7def714.vendor.js" defer integrity="sha512-nVPtIY6KdwKUqUaeHxE6Rprqwr2WVcpWXFV16MrmCPY7ddNp9iG51y+Tjh5Nc2I5tIvKvmzvMk1CSaITIqD7uA==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"></script><script crossorigin="anonymous" src="_assets/38b20d11dbf05ad2.strings.js" integrity="sha512-H12N9M1B/v1W+svN74uHoeFPVNxhO+zcdSg9/8eH8EuNjLXT9P0MptCM6omxvHh6qS64tVpmR+y/NTHMDZBU8g==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"></script><script crossorigin="anonymous" src="_assets/9a065197c269c425.en-IN.js" integrity="sha512-piGYMu0nY/2oaE/UvQwScbO+AFJwjRFSqKGWd/HbXShPDmnqtL1u2trUpJ5unxhsIYE3dGy8yJ/XKD9+Swu7gg==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"></script><script crossorigin="anonymous" src="_assets/988eee6455ee29b7.js" defer integrity="sha512-xcCl+Bbqhbj6GMCAh7yg3qEqPMCGOedLItKEaRC46D86b5f2JHIQ3c8fKi1KG319TXXmnUhwQMwnmrhBwgIQyA==" nonce="aef073b1-ca8d-428f-9a79-0ed6f65f1444"></script>
-</body></html>
+        html {
+            height: 100%;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100%;
+        }
+
+        .resume-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .profile-info h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-info .job-title {
+            font-size: 1.25rem;
+            color: #cbd5e0;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .profile-info .tagline {
+            font-size: 1rem;
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .main-content {
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, transparent 100%);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            color: #4a5568;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 16px;
+            border-left: 4px solid #667eea;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .certificate-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-image-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .certificate-pdf {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pdf-view-button {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .pdf-view-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+        }
+
+        .certificate-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #a0aec0;
+        }
+
+        .certificate-info {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .certificate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .certificate-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .certificate-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .certificate-card:hover .certificate-icon {
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .certificate-content {
+            flex: 1;
+        }
+
+        .certificate-title {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .certificate-issuer {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .certificate-date {
+            color: #718096;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .education-icon {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+            box-shadow: 0 6px 12px rgba(72, 187, 120, 0.3) !important;
+        }
+
+        .education-cert:hover .education-icon {
+            box-shadow: 0 8px 16px rgba(72, 187, 120, 0.4) !important;
+        }
+
+        .professional-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3) !important;
+        }
+
+        .professional-cert:hover .professional-icon {
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        .experience-icon {
+            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%) !important;
+            box-shadow: 0 6px 12px rgba(246, 173, 85, 0.3) !important;
+        }
+
+        .experience-cert:hover .experience-icon {
+            box-shadow: 0 8px 16px rgba(246, 173, 85, 0.4) !important;
+        }
+
+        .edit-instructions {
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+            border: 2px dashed #cbd5e0;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .edit-instructions h3 {
+            color: #2d3748;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .edit-instructions code {
+            background: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #667eea;
+            border: 1px solid #e2e8f0;
+        }
+
+        .edit-instructions ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .edit-instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .profile-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="floating-elements">
+   <div class="floating-circle"></div>
+   <div class="floating-circle"></div>
+   <div class="floating-circle"></div>
+  </div>
+  <main class="container">
+   <div class="resume-card">
+    <header class="header-section">
+     <div class="profile-content">
+      <div class="profile-avatar" id="avatar">
+       JD
+      </div>
+      <div class="profile-info">
+       <h1 id="fullName">John Doe</h1>
+       <div class="job-title" id="jobTitle">
+        Senior Software Engineer
+       </div>
+       <div class="tagline" id="tagline">
+        Passionate about creating innovative digital solutions
+       </div>
+       <div class="contact-info">
+        <div class="contact-item">
+         <svg class="contact-icon" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+         </svg><span id="email">john.doe@email.com</span>
+        </div>
+        <div class="contact-item">
+         <svg class="contact-icon" viewbox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+         </svg><span id="phone">+1 (555) 123-4567</span>
+        </div>
+        <div class="contact-item">
+         <svg class="contact-icon" viewbox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+         </svg><span id="location">San Francisco, CA</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="main-content">
+     <section class="section">
+      <h2 class="section-title">📝 About Me</h2>
+      <p class="about-text" id="aboutText">Experienced software engineer with 8+ years of expertise in full-stack development, cloud architecture, and team leadership. Passionate about building scalable solutions and mentoring junior developers.</p>
+     </section>
+     <section class="section">
+      <div class="edit-instructions">
+       <h3>🎯 How to Edit This Resume</h3>
+       <p><strong>To add/edit certificates, scroll down to the JavaScript section and modify these arrays:</strong></p>
+       <ul>
+        <li><code>educationCertificates</code> - Add your 2 education certificates</li>
+        <li><code>professionalCertificates</code> - Add as many professional certificates as needed</li>
+        <li><code>experienceCertificates</code> - Add any number of experience certificates</li>
+       </ul>
+       <p>Each certificate needs: <code>title</code>, <code>issuer</code>, <code>date</code>, and <code>pdfUrl</code></p>
+       <p><strong>💡 Tip:</strong> Just copy the existing certificate object format and add your details!</p>
+      </div>
+     </section>
+     <section class="section" id="educationSection">
+      <h2 class="section-title">🎓 Education Certificates</h2>
+      <div class="certificates-grid" id="educationCertificates"></div>
+     </section>
+     <section class="section" id="professionalSection">
+      <h2 class="section-title">⭐ Professional Certificates</h2>
+      <div class="certificates-grid" id="professionalCertificates"></div>
+     </section>
+     <section class="section" id="experienceSection">
+      <h2 class="section-title">💼 Experience Certificates</h2>
+      <div class="certificates-grid" id="experienceCertificates"></div>
+     </section>
+    </div>
+   </div>
+  </main>
+  <script>
+        // ============================================
+        // 🎯 EDIT YOUR CERTIFICATES HERE
+        // ============================================
+        
+        // Education Certificates (2 certificates)
+        const educationCertificates = [
+            {
+                title: "Bachelor of Computer Science",
+                issuer: "University of Technology",
+                date: "2018",
+                pdfUrl: "https://drive.google.com/file/d/1dWgDxfECusXOCBJJfnrJ5XsHnUkTJyKy/view?usp=drive_link"
+            },
+            {
+                title: "Master of Software Engineering",
+                issuer: "Tech Institute",
+                date: "2020",
+                pdfUrl: "" // Add your PDF URL here
+            }
+        ];
+
+        // Professional Certificates (Add as many as you need!)
+        const professionalCertificates = [
+            {
+                title: "AWS Certified Solutions Architect",
+                issuer: "Amazon Web Services",
+                date: "2023",
+                pdfUrl: "" // Add your PDF URL here
+            },
+            {
+                title: "Google Cloud Professional",
+                issuer: "Google Cloud",
+                date: "2023",
+                pdfUrl: ""
+            },
+            {
+                title: "Kubernetes Administrator",
+                issuer: "Cloud Native Computing Foundation",
+                date: "2022",
+                pdfUrl: ""
+            },
+            {
+                title: "MongoDB Developer",
+                issuer: "MongoDB University",
+                date: "2022",
+                pdfUrl: ""
+            },
+            {
+                title: "Docker Certified Associate",
+                issuer: "Docker Inc.",
+                date: "2023",
+                pdfUrl: ""
+            },
+            {
+                title: "Certified Scrum Master",
+                issuer: "Scrum Alliance",
+                date: "2021",
+                pdfUrl: ""
+            },
+            {
+                title: "Azure Solutions Architect",
+                issuer: "Microsoft",
+                date: "2023",
+                pdfUrl: ""
+            },
+            {
+                title: "Python Professional Certification",
+                issuer: "Python Institute",
+                date: "2021",
+                pdfUrl: ""
+            },
+            {
+                title: "React Developer Certificate",
+                issuer: "Meta",
+                date: "2022",
+                pdfUrl: ""
+            },
+            {
+                title: "DevOps Professional",
+                issuer: "Linux Foundation",
+                date: "2023",
+                pdfUrl: ""
+            }
+            // Add more professional certificates here by copying the format above
+        ];
+
+        // Experience Certificates (Add as many as you need!)
+        const experienceCertificates = [
+            {
+                title: "Senior Software Engineer Experience Letter",
+                issuer: "TechCorp Inc.",
+                date: "2020 - 2024",
+                pdfUrl: ""
+            },
+            {
+                title: "Full Stack Developer Certificate",
+                issuer: "StartupXYZ",
+                date: "2018 - 2020",
+                pdfUrl: ""
+            },
+            {
+                title: "Junior Developer Experience",
+                issuer: "Digital Solutions Ltd.",
+                date: "2016 - 2018",
+                pdfUrl: ""
+            }
+            // Add more experience certificates here by copying the format above
+        ];
+
+        // ============================================
+        // END OF EDITABLE SECTION
+        // ============================================
+
+        const defaultConfig = {
+            full_name: "John Doe",
+            job_title: "Senior Software Engineer",
+            tagline: "Passionate about creating innovative digital solutions",
+            email: "john.doe@email.com",
+            phone: "+1 (555) 123-4567",
+            location: "San Francisco, CA",
+            about_text: "Experienced software engineer with 8+ years of expertise in full-stack development, cloud architecture, and team leadership. Passionate about building scalable solutions and mentoring junior developers.",
+            background_color: "#667eea",
+            surface_color: "#2d3748",
+            text_color: "#4a5568",
+            primary_action_color: "#667eea",
+            secondary_action_color: "#f093fb",
+            font_family: "Inter",
+            font_size: 16
+        };
+
+        let config = { ...defaultConfig };
+
+        function updateAvatar(name) {
+            const avatar = document.getElementById('avatar');
+            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+            avatar.textContent = initials;
+        }
+
+        function convertToEmbedUrl(pdfUrl) {
+            if (!pdfUrl || pdfUrl.trim() === '') return '';
+            
+            // Convert Google Drive sharing link to embeddable format
+            if (pdfUrl.includes('drive.google.com/file/d/')) {
+                const fileIdMatch = pdfUrl.match(/\/d\/([^/]+)/);
+                if (fileIdMatch) {
+                    return `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
+                }
+            }
+            
+            return pdfUrl;
+        }
+
+        function createCertificateCard(cert, type) {
+            const card = document.createElement('div');
+            card.className = `certificate-card ${type}-cert`;
+            
+            // Determine icon based on type
+            let iconPath, iconColor;
+            if (type === 'education') {
+                iconPath = 'M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z';
+                iconColor = '#48bb78';
+            } else if (type === 'experience') {
+                iconPath = 'M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z';
+                iconColor = '#f6ad55';
+            } else {
+                iconPath = 'M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z';
+                iconColor = '#667eea';
+            }
+
+            // Create image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'certificate-image-container';
+            
+            if (cert.pdfUrl && cert.pdfUrl.trim() !== '') {
+                const embedUrl = convertToEmbedUrl(cert.pdfUrl);
+                const iframe = document.createElement('iframe');
+                iframe.src = embedUrl;
+                iframe.className = 'certificate-pdf';
+                iframe.allow = 'autoplay';
+                
+                imageContainer.appendChild(iframe);
+                
+                // Add view button
+                const viewButton = document.createElement('a');
+                viewButton.href = cert.pdfUrl;
+                viewButton.target = '_blank';
+                viewButton.rel = 'noopener noreferrer';
+                viewButton.className = 'pdf-view-button';
+                viewButton.textContent = '📄 View Full PDF';
+                imageContainer.appendChild(viewButton);
+            } else {
+                // Show placeholder
+                const placeholder = document.createElement('div');
+                placeholder.className = 'certificate-placeholder';
+                placeholder.innerHTML = `
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                        <path d="${iconPath}" fill="${iconColor}"/>
+                    </svg>
+                    <span style="font-size: 0.85rem;">Certificate PDF</span>
+                `;
+                imageContainer.appendChild(placeholder);
+            }
+            
+            // Create info section
+            const infoDiv = document.createElement('div');
+            infoDiv.className = 'certificate-info';
+            infoDiv.innerHTML = `
+                <div class="certificate-icon ${type}-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                        <path d="${iconPath}" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="certificate-content">
+                    <div class="certificate-title">${cert.title}</div>
+                    <div class="certificate-issuer">${cert.issuer}</div>
+                    <div class="certificate-date">${cert.date}</div>
+                </div>
+            `;
+            
+            card.appendChild(imageContainer);
+            card.appendChild(infoDiv);
+            
+            return card;
+        }
+
+        function renderCertificates() {
+            // Render education certificates
+            const eduContainer = document.getElementById('educationCertificates');
+            eduContainer.innerHTML = '';
+            educationCertificates.forEach(cert => {
+                eduContainer.appendChild(createCertificateCard(cert, 'education'));
+            });
+
+            // Render professional certificates
+            const profContainer = document.getElementById('professionalCertificates');
+            profContainer.innerHTML = '';
+            professionalCertificates.forEach(cert => {
+                profContainer.appendChild(createCertificateCard(cert, 'professional'));
+            });
+
+            // Render experience certificates
+            const expContainer = document.getElementById('experienceCertificates');
+            expContainer.innerHTML = '';
+            experienceCertificates.forEach(cert => {
+                expContainer.appendChild(createCertificateCard(cert, 'experience'));
+            });
+
+            // Hide sections if empty
+            document.getElementById('educationSection').style.display = educationCertificates.length > 0 ? 'block' : 'none';
+            document.getElementById('professionalSection').style.display = professionalCertificates.length > 0 ? 'block' : 'none';
+            document.getElementById('experienceSection').style.display = experienceCertificates.length > 0 ? 'block' : 'none';
+        }
+
+        async function onConfigChange(newConfig) {
+            config = { ...config, ...newConfig };
+            
+            // Update text content
+            document.getElementById('fullName').textContent = config.full_name || defaultConfig.full_name;
+            document.getElementById('jobTitle').textContent = config.job_title || defaultConfig.job_title;
+            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+            document.getElementById('email').textContent = config.email || defaultConfig.email;
+            document.getElementById('phone').textContent = config.phone || defaultConfig.phone;
+            document.getElementById('location').textContent = config.location || defaultConfig.location;
+            document.getElementById('aboutText').textContent = config.about_text || defaultConfig.about_text;
+            
+            // Update avatar
+            updateAvatar(config.full_name || defaultConfig.full_name);
+            
+            // Update colors
+            const backgroundGradient = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.primary_action_color || defaultConfig.primary_action_color} 100%)`;
+            document.body.style.background = backgroundGradient;
+            
+            const headerSection = document.querySelector('.header-section');
+            const headerGradient = `linear-gradient(135deg, ${config.surface_color || defaultConfig.surface_color} 0%, ${config.text_color || defaultConfig.text_color} 100%)`;
+            headerSection.style.background = headerGradient;
+            
+            const avatar = document.getElementById('avatar');
+            const avatarGradient = `linear-gradient(135deg, ${config.secondary_action_color || defaultConfig.secondary_action_color} 0%, ${config.primary_action_color || defaultConfig.primary_action_color} 100%)`;
+            avatar.style.background = avatarGradient;
+            
+            // Update font
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = '-apple-system, BlinkMacSystemFont, sans-serif';
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+            
+            // Update font sizes
+            const baseSize = config.font_size || defaultConfig.font_size;
+            document.getElementById('fullName').style.fontSize = `${baseSize * 2.5 / 16}rem`;
+            document.querySelector('.job-title').style.fontSize = `${baseSize * 1.25 / 16}rem`;
+            document.querySelector('.tagline').style.fontSize = `${baseSize * 1 / 16}rem`;
+            document.querySelector('.about-text').style.fontSize = `${baseSize * 1.1 / 16}rem`;
+            
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                title.style.fontSize = `${baseSize * 1.75 / 16}rem`;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => {
+                            config.surface_color = value;
+                            window.elementSdk.setConfig({ surface_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                        set: (value) => {
+                            config.primary_action_color = value;
+                            window.elementSdk.setConfig({ primary_action_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                        set: (value) => {
+                            config.secondary_action_color = value;
+                            window.elementSdk.setConfig({ secondary_action_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["full_name", config.full_name || defaultConfig.full_name],
+                ["job_title", config.job_title || defaultConfig.job_title],
+                ["tagline", config.tagline || defaultConfig.tagline],
+                ["email", config.email || defaultConfig.email],
+                ["phone", config.phone || defaultConfig.phone],
+                ["location", config.location || defaultConfig.location],
+                ["about_text", config.about_text || defaultConfig.about_text]
+            ]);
+        }
+
+        // Initialize the SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Initialize with default values and render certificates
+        onConfigChange(defaultConfig);
+        renderCertificates();
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a07be0e4014a753',t:'MTc2MzQ3MTc4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
