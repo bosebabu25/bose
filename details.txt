@@ -1,0 +1,39 @@
+https://drive.google.com/file/d/1OJKzOSAlEFjUyHv9ESYWuaLvSOp7-QZf/view?usp=sharing
+INTERNSHIP
+Data Science & Data Analysis Project
+360DigiTMG
+Medical Inventory Optimisation
+Business Problem: Bounce rate is increasing significantly leading to patient dissatisfaction.
+Business Objective: Minimize bounce rate.
+Business Constraint: Minimize inventory cost
+Success Criteria
+Business Success Criteria: Reduce bounce rate by at least 30%.
+Economic Success Criteria: Increase revenue by at least 20 lacs INR by reducing bounce rate.
+
+
+
+JPMorgan Chase & Co. Excel Skills Job Simulation on Forage - November 2023
+
+ Acquired proficient command of Excel functionalities and data analysis techniques, including data cleansing, and manipulation, and conditional formatting techniques.
+ Acquired proficiency in automation by learning to record macros and script in Visual Basic for Applications (VBA), developing two functional macros integrated with buttons using account sales data.
+ Gained expertise in data visualization and storytelling using Excel and PowerPoint by creating impactful charts and interactive dashboards.
+
+
+
+https://drive.google.com/file/d/1cntBUENKWTincb2GFT1un20cXl6BbW21/view?usp=sharing
+PwC Switzerland Power BI Job Simulation on Forage - June 2024
+
+ Completed a job simulation where I strengthened my PowerBI skills to better understand clients and their data visualisation needs.
+ Demonstrated expertise in data visualization through the creation of Power BI dashboards that effectively conveyed KPIs, showcasing the ability to respond to client requests with well-designed solutions.
+ Strong communication skills reflected in the concise and informative email communication with engagement partners, delivering valuable insights and actionable suggestions based on data analysis.
+ Leveraged analytical problem-solving skills to examine HR data, particularly focusing on gender-related KPIs, and identified root causes for gender balance issues at the executive management level, highlighting a commitment to data-driven decision-making.
+ 
+
+
+
+Tata Data Visualisation: Empowering Business with Effective Insights Job Simulation on Forage - October 2023
+
+ Completed a simulation involving creating data visualizations for Tata Consultancy Services
+ Prepared questions for a meeting with client senior leadership
+ Created visuals for data analysis to help executives with effective decision making
+ 
